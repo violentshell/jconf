@@ -1,5 +1,5 @@
 # Jconf
-A simple module to write, load and update JSON config files for your python projects.
+A simple module to write, load and update JSON config files for your python3 projects.
 
 ## Installation
 jconf is packaged and distrubted with pip:
@@ -13,12 +13,9 @@ Create a config file:
 
     >>>> import jconf
     >>>> conf = jconf.Jconf('conf.json')
-    >>>> conf.is_empty()
-    True
     >>>> conf.somevar1 = True
     >>>> conf.somevar2 = 3.14
     >>>> conf.write()
-    
     
 Read and access variables from a config file:
     
@@ -45,8 +42,6 @@ Load, change and save to a new file:
     >>>> conf.somevar1 = True
     >>>> conf.somevar2 = 3.14
     >>>> conf.write('newconf.json')
-    
 
 ## Gotchas
 If you use a number as the json key, jconf will return it with a preceding 'n' so that it can call the setattr method
-
