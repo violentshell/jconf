@@ -13,14 +13,21 @@ Create a config file:
 
     >>>> import jconf
     >>>> conf = jconf.Jconf('conf.json')
+    >>>> conf.is_empty()
+    True
     >>>> conf.somevar1 = True
     >>>> conf.somevar2 = 3.14
     >>>> conf.write()
+    
     
 Read and access variables from a config file:
     
     >>>> conf = jconf.Jconf('conf.json')
     >>>> conf.read()
+    >>>> conf.is_empty()
+    False
+    >>>> conf.keys()
+    ['somevar1', 'somevar2']
     >>>> conf.somevar1
     True
     >>>> conf.somevar2
@@ -38,3 +45,8 @@ Load, change and save to a new file:
     >>>> conf.somevar1 = True
     >>>> conf.somevar2 = 3.14
     >>>> conf.write('newconf.json')
+    
+
+## Gotchas
+If you use a number as the json key, jconf will return it with a preceding 'n' so that it can call the setattr method
+
