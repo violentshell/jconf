@@ -39,6 +39,7 @@ Change a config files variables and save them:
 Load, change and save to a new file:
 
     >>>> conf = jconf.Jconf('conf.json')
+    >>>> conf.read()
     >>>> conf.somevar1 = True
     >>>> conf.somevar2 = 3.14
     >>>> conf.write('newconf.json')
